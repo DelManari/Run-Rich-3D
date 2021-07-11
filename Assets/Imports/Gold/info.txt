@@ -1,0 +1,11 @@
+Name: Gold
+Version: 2015
+Preview: Yes
+Units: Millimeters
+Dimension: 462.77 x 562.66 x 253.77
+Polys: 684
+XForm: Yes
+Box Trick: Yes
+Model Parts: 6
+Render: Corona
+Formats: 3Ds Max 2015, OBJ, FBX
