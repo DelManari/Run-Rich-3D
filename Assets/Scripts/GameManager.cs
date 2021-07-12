@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject startButton;
+
+    [SerializeField]
+    private TextMeshProUGUI scoreUi;
 
     public static float score = 40f;
     public static bool gameStarted = false;
@@ -35,5 +38,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         score = 40;
+    }
+     void Update()
+    {
+        scoreUi.text = score.ToString();
     }
 }

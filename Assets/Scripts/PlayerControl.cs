@@ -7,7 +7,18 @@ public class PlayerControl : MonoBehaviour
 {
     CharacterController controller;
     Animator anim;
-    public Camera cam;
+
+    //public Camera cam;
+    public Animator camAnim;
+
+    //end game
+    [SerializeField]
+    private GameObject headlthBar;
+    [SerializeField]
+    private GameObject endGamePanel;
+    [SerializeField]
+    private Animator endGameAnimator;
+
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     public GameObject replayButton;
@@ -60,7 +71,7 @@ public class PlayerControl : MonoBehaviour
         if (triggerEnter2 == true )
         {
             TestCmeraController.horizontal = false;
-            cam.transform.Rotate(0, -90, 0, Space.World);
+           // cam.transform.Rotate(0, -90, 0, Space.World);
 
             transform.Rotate(0, -90, 0, Space.World);
             triggerEnter2 = false;
@@ -83,8 +94,12 @@ public class PlayerControl : MonoBehaviour
             GameManager.gameStarted = false;
             anim.SetTrigger("dance");
             AudioManager.instance.PlayMusic("win");
+            endGamePanel.SetActive(true);
+            headlthBar.SetActive(false);
+            endGameAnimator.SetTrigger("endgame");
 
             replayButton.SetActive(true);
+            camAnim.SetTrigger("rotate");
             transform.Rotate(0, -180, 0, Space.World);
 
         }
